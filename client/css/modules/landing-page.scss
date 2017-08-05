@@ -1,0 +1,62 @@
+.container {
+	/* to override responsive-breakpoint of grid TODO should not be necessary */
+	width: 100%;
+}
+
+.startLogo {
+	margin: auto;
+}
+
+@include breakpoint($breakpoint-small) {
+	.startLogo {
+		display: none;
+	}
+}
+
+.callToAction {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.callToActionContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.callToActionText {
+	text-align: center;
+	line-height: 1.2em;
+	padding: 4rem 0.2em 0 0.2em;
+}
+
+$featured-offset: 0.35em;
+
+.featuredTitle {
+	margin-left: $featured-offset;
+}
+
+.sideScroller {
+	overflow-x: visible;
+	overflow-y: hidden;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.sideScrollerItem {
+	display: inline-block;
+	max-width: 90%;
+	margin: 0 0.6rem;
+	flex-shrink: 0;
+}
+
+@include breakpoint($breakpoint-large) {
+	.sideScrollerItem {
+		max-width: 30%;
+	}
+}

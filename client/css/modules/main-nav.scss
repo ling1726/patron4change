@@ -1,0 +1,26 @@
+.logo {
+  width: 180%;
+  margin-left: 1rem;
+}
+
+.appBar {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.searchBack {
+  /* fix for white back-navigation on white background */
+  color: gray !important;
+}
+
+.startAppBar {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+@include breakpoint($breakpoint-small) {
+
+  .changemakerLink {
+    display: none !important;
+  }
+}

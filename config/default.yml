@@ -1,0 +1,57 @@
+app:
+  host: http://localhost:3000
+
+database:
+  host: localhost
+  port: 5432
+  database: patron4change
+  user: pgadmin
+  password: asdfasdf
+
+port: 3000
+
+dblog: false
+
+sequelize:
+  host: localhost
+  dialect: 'postgres'
+  pool:
+    max: 5
+    min: 0
+    idle: 10000
+
+search:
+  host: localhost
+  port: 3001
+
+elasticsearch:
+  host: localhost:9200
+
+storage:
+  host: p4c-storage.p-h.im
+  port: 443
+  bucketName: uploads
+  accessKey: minio
+  secretKey: jUvN0mNiZbgiphR6iEnG
+
+coconut:
+  apiKey: k-3840cb93e676256c22cccd01e6e8fa55
+  outputUrlTemplate: s3://AKIAIZHH73KK7R747MQQ:dR+03HT7P99Mp8A27cyYGq5rrXzZ1eCo4q7p+oTp@p4c-dev-storage/{objectName}
+  webhookTemplate: http://webhook.needs.to.be.specified.example.com/api/media/encodingDone?objectName={objectName}
+
+queues:
+  -
+    name: updateSearchIndex
+    config:
+      batchSize: 1000
+      batchDelay: 60000
+
+auth0:
+  domain: patron4change.eu.auth0.com
+  clientId: 96GtA8F9eFYDP6mH3E2PxXt4NZiuOi8D
+  secret: O512Yjg-_CDHwhMrH4A8HtCiumoEI-9GqNgF9Xdp2vYjB7HchMhuaQxtiy_leckM
+
+mangopay:
+  clientId: p4case2016
+  passwd: 9yvjwv183gUuvHmzmCOgoDOWOSNSGL0MKkGNovYuXFMB625aSJ
+  host: https://api.sandbox.mangopay.com

@@ -1,0 +1,13 @@
+version: '2'
+services:
+  db:
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    volumes:
+      - "postgres-data:/var/lib/postgresql/data"
+#      - "../db/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/"
+    environment:
+      - POSTGRES_PASSWORD=asdfasdf
+      - POSTGRES_USER=pgadmin
+      - POSTGRES_DB=patron4change

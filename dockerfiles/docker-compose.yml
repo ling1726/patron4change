@@ -1,0 +1,9 @@
+version: '2'
+#  proxy:
+#    image: nginx:
+volumes:
+  postgres-data:
+    driver: local
+  elastic-data:
+    driver: local
+

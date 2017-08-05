@@ -1,0 +1,19 @@
+FROM node:7.1.0-alpine
+MAINTAINER Peter Hoffmann <peter@p-h.im>
+
+EXPOSE 3001
+
+COPY ./ /p4c_search/
+
+RUN apk add --update python g++ make
+RUN mkdir /home/node
+RUN chown node:node /home/node
+RUN chown -R node:node /p4c_search/
+RUN npm install -g node-gyp
+
+WORKDIR /p4c_search
+USER node
+
+RUN npm i
+
+CMD ["node", "services/search/index.js"]

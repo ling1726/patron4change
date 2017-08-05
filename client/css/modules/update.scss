@@ -1,0 +1,16 @@
+.card {
+
+  &:not(:last-of-type) {
+    margin-bottom: $std-space;
+  }
+
+  h5 {
+    font-size: 1.7rem !important;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

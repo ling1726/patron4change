@@ -1,0 +1,91 @@
+{
+  "profile_v1": {
+    "settings": {
+        "analysis": {
+            "analyzer": {
+                "p4c_german": {
+                    "tokenizer": "standard",
+                    "filter": [
+                      "asciifolding",
+                      "apostrophe",
+                      "german_stop",
+                      "german_decompound",
+                      "unique",
+                      "german_stemmer",
+                      "german_normalization",
+                      "lowercase",
+                      "p4c_phonetic_cologne",
+                      "unique"
+                    ]
+                }
+            },
+            "filter" : {
+                "ascii_folding" : {
+                  "type": "asciifolding",
+                  "preserve_original": true
+                },
+                "apostrophe": {
+                  "type": "apostrophe"
+                },
+                "german_stop": {
+                  "type":       "stop",
+                  "stopwords":  "_german_"
+                },
+                "german_decompound": {
+                  "type": "decompound"
+                },
+                "german_stemmer": {
+                  "type":       "stemmer",
+                  "language":   "light_german"
+                },
+                "p4c_phonetic_cologne": {
+                  "type":    "phonetic",
+                  "encoder": "koelnerphonetik",
+                  "replace": false
+                },
+                "p4c_phonetic_beidermorse": {
+                  "type":    "phonetic",
+                  "encoder": "beidermorse",
+                  "languageset": "german",
+                  "replace": false
+                },
+                "unique": {
+                  "type": "unique"
+                }
+            }
+        }
+    },
+    "mappings": {
+      "changemaker": {
+        "properties": {
+          "firstName": {
+            "type": "text"
+          },
+          "lastName": {
+            "type": "text"
+          },
+          "mission": {
+            "type": "text",
+            "analyzer": "p4c_german"
+          },
+          "statusUpdates": {
+            "type": "nested",
+            "properties": {
+              "title": {
+                "type": "text",
+                "analyzer": "p4c_german"
+              },
+              "content": {
+                "type": "text",
+                "analyzer": "p4c_german"
+              }
+            }
+          },
+          "suggest" : {
+            "type" : "completion"
+          }
+        }
+      }
+    }
+  }
+}

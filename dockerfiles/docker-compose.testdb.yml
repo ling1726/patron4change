@@ -1,0 +1,10 @@
+version: '2'
+services:
+  testdb:
+    image: postgres:9.6
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=asdfasdf
+      - POSTGRES_USER=pgadmin
+      - POSTGRES_DB=patron4change

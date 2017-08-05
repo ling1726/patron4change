@@ -1,0 +1,13 @@
+.list, .flexer {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+}
+
+.recentJoin {
+  font-weight: bold;
+}

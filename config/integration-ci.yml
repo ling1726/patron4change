@@ -1,0 +1,6 @@
+database:
+  host: docker
+  port: 5433
+
+elasticsearch:
+  host: docker:9200

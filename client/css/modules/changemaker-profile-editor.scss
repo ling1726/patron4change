@@ -1,0 +1,24 @@
+@import "../theme/_theme.scss";
+
+.dropzone {
+  border-bottom: 1px solid $palette-grey-300;
+  padding: 2em;
+  margin: 2em 0;
+  color: $color-text-secondary;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.dropzoneActive {
+  background-color: scale-color($color-primary, $lightness: 60%, $saturation: -75%);
+  border-color: $color-primary;
+}
+
+.dropzoneReject {
+  $color: adjust-hue($color-primary, 180);
+  background-color: scale-color($color, $lightness: 60%, $saturation: -75%);
+  border-color: $color;
+}
+
+.profileTitle {
+  margin: 1em;
+}

@@ -1,0 +1,10 @@
+database:
+  port: 5433
+
+queues:
+  -
+    # Update Search index immediately
+    name: updateSearchIndex
+    config:
+      batchSize: 1000
+      batchDelay: 0

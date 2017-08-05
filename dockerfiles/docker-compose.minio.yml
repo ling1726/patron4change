@@ -1,0 +1,12 @@
+# Stub. No need to start this in the local environment
+version: '2'
+services:
+  db:
+    image: minio/minio
+    command: server /data
+    ports:
+      - "9000:9000"
+    volumes:
+      - "minio-data:/data"
+    environment:
+      # define environment here

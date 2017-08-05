@@ -1,0 +1,347 @@
+swagger: '2.0'
+info:
+  title: Changemaker API
+  description: A stateless RESTful API for the core backend-communication of patron4change
+  version: "1.0.0"
+# array of all schemes that your API supports
+schemes:
+  - https
+# will be prefixed to all paths
+# TODO use dynamic host, or update swagger-test to be host-independent
+host: http://localhost:3000
+basePath: /api
+produces:
+  - application/json
+paths:
+  /changemakers:
+    get:
+      summary: Get all Changemakers
+      tags:
+        - "Changemaker"
+      description: |
+        A list of Changemakers that can optionally be filtered.
+      parameters:
+        - $ref: '#/parameters/limitParam'
+        - $ref: '#/parameters/offsetParam'
+      responses:
+        200:
+          description: An array of Changemakers
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Changemaker'
+        500:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a Changemaker
+      tags:
+        - "Changemaker"
+      description: |
+        Create a new user including a Changemaker profile
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Changemaker'
+      responses:
+        201:
+          description: Changemaker created
+          headers:
+            Location:
+              description: The location of the created Changemaker
+        500:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /changemakers/{changemakerId}:
+    get:
+      summary: Get a single Changemaker profile
+      tags:
+        - "Changemaker"
+      description: |
+        Returns a single Changemaker specified by id
+      parameters:
+        - name: changemakerId
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: A single Changemaker profile
+          schema:
+            $ref: '#/definitions/Changemaker'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    put:
+      summary: Update a Changemaker
+      tags:
+        - "Changemaker"
+      description: |
+        Overwrite an existing Changemaker profile (specified by id) with the given document
+      parameters:
+        - name: changemakerId
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Changemaker'
+      responses:
+        200:
+          description: The updated Changemaker
+          schema:
+            $ref: '#/definitions/Changemaker'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /changemakers/featured:
+    get:
+      summary: Get the changemakers that are determined as most interesting to the authenticated user
+      tags:
+        - "Changemaker"
+      description: |
+        Returns a list of changemakers
+      responses:
+        200:
+          description: A list of changemakers
+          schema:
+            $ref: '#/definitions/Changemaker'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /patrons:
+    get:
+      summary: Get all Patrons
+      tags:
+        - "Patron"
+      description: |
+        A list of Patrons that can optionally be filtered.
+      parameters:
+        - $ref: '#/parameters/limitParam'
+        - $ref: '#/parameters/offsetParam'
+      responses:
+        200:
+          description: An array of Patrons
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Patron'
+        500:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a Patron
+      tags:
+        - "Patron"
+      description: |
+        Create a new user including a Patron profile
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Patron'
+      responses:
+        201:
+          description: Patron created
+          headers:
+            Location:
+              description: The location of the created Patron
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /patrons/{patronId}:
+    get:
+      summary: Get a single Patron
+      tags:
+        - "Patron"
+      description: |
+        Returns a single Patron specified by id
+      parameters:
+        - name: patronId
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: A single Patron
+          schema:
+            $ref: '#/definitions/Patron'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    delete:
+      summary: Remove a Backing
+      tags:
+        - "Backing"
+      description: |
+        Should only be available for regular (recurring) backings.
+        Backing must belong to the current user.
+      parameters:
+        - name: backingId
+          in: path
+          required: true
+          type: integer
+      responses:
+        204:
+          description: Backing removed
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /search:
+    get:
+      summary: Full-text search over changemakers
+      tags:
+        - "Changemaker"
+      description: |
+        Executes a complex search over all the available approved changemakers, to determine best match with a search term
+      parameters:
+        - name: q
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: A list of Changemakers
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Changemaker'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  UserProperties:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Unique identifier.
+      firstName:
+        type: string
+        description: First name of the User
+      lastName:
+        type: string
+        description: Last name of the User
+      email:
+        type: string
+        description: Email address of the User
+      isEmailConfirmed:
+        type: boolean
+        description: Email is validated
+      isAnonymous:
+        type: boolean
+        description: Is Anonymous
+      isBlocked:
+        type: boolean
+        description: Is blocked
+      avatarUrl:
+        type: string
+        description: Image URL of the Changemaker
+  Changemaker:
+    allOf:
+      - $ref: '#/definitions/UserProperties'
+      - type: object
+        properties:
+          isApproved:
+            type: boolean
+            description: Whether the Changemaker profile has been approved by an admin
+          approvalDate:
+            type: date
+            description: When the changemaker has been approved
+          mission:
+            type: string
+            description: Mission description
+          videoUrl:
+            type: string
+            description: Changemaker introduction video resource location
+  Patron:
+    allOf:
+      - $ref: '#/definitions/UserProperties'
+  Admin:
+    allOf:
+      - $ref: '#/definitions/UserProperties'
+  Backing:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Unique identifier.
+      changemaker_id:
+        type: integer
+        description: ID of the Changemaker who is backed
+      # TODO changemakerName
+      patron_id:
+        type: integer
+        description: ID of the Patron who is backing
+      # TODO patronName
+      type:
+        type: string
+        description: (enum) regular or single
+      amount:
+        type: integer
+        description: Amount in cents
+  StatusUpdate:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Unique identifier
+      changemaker_id:
+        type: integer
+        description: ID of the Changemaker who posted this update
+      title:
+        type: string
+        description: The title of this update
+      text:
+        type: string
+        description: The text content of this update
+  SearchMatch:
+    type: object
+    properties:
+      relevance:
+        type: double
+  SearchResult:
+    type: object
+    properties:
+      match:
+        $ref: '#/definitions/SearchMatch'
+      changemaker:
+        $ref: '#/definitions/Changemaker'
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
+parameters:
+  limitParam:
+    name: limit
+    in: query
+    type: integer
+    description: 'The number of items returned'
+    default: 10
+  offsetParam:
+    name: offset
+    in: query
+    type: integer
+    description: The number of items skipped
+    default: 0

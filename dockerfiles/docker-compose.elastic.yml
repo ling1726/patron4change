@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  elastic:
+    build:
+      context: .
+      dockerfile: Dockerfile.elastic
+    volumes:
+      - "elastic-data:/usr/share/elasticsearch/data"
+    ports:
+      - "9200:9200"

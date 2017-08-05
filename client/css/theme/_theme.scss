@@ -1,0 +1,31 @@
+@import "~react-toolbox/lib/colors";
+@import "~react-toolbox/lib/globals";
+
+$color-divider: $palette-grey-300;
+$color-background: $palette-grey-400;
+$color-text: $palette-grey-900;
+$color-text-secondary: $palette-grey-700;
+
+$color-primary: $palette-teal-500;
+$color-primary-dark: $color-white;
+$color-accent: $color-white;
+$color-accent-dark: $color-white;
+$color-primary-contrast: $color-white;
+$color-accent-contrast: $palette-teal-a400;
+
+$breakpoint-small: (0 $layout-breakpoint-xs);
+$breakpoint-large: $layout-breakpoint-xs + 1;
+
+$std-space: 0.72rem;
+
+@mixin breakpoint($value) {
+  $type: type-of($value);
+
+  @if ($type == 'list') {
+    $min: nth($value, 1);
+    $max: nth($value, 2);
+    @media screen and (min-width: $min) and (max-width: $max) { @content; }
+  } @else {
+    @media screen and (min-width: $value) { @content; }
+  }
+}

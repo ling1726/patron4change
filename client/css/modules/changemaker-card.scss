@@ -1,0 +1,27 @@
+@import "../theme/_theme.scss";
+
+.container {
+  padding: 3em;
+  margin: 3em;
+  background-color: $color-primary;
+}
+
+.text {
+  max-height: 6.5rem;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.textContent {
+  line-height: 1.8rem;
+}
+
+.readMore {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0; padding: 20px 0;
+  background-image: linear-gradient(to bottom, transparent, white);
+}

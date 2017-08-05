@@ -1,0 +1,113 @@
+[
+	{
+		"lastName": "Holzer",
+		"firstName": "Matthias",
+		"email": "matthias.holzer@example.com",
+		"emailIsConfirmed": true,
+		"isAnonymus": false,
+		"passwordHash": "fsa79gsags9g5sg95s896gsyfol23orh2o",
+		"avatarUrl": "https://randomuser.me/api/portraits/med/men/42.jpg",
+		"isBlocked": false,
+		"fkCountryIdNationality": "GB"
+	},
+	{
+		"lastName": "Mayer",
+		"firstName": "Roland",
+		"email": "roland.mayer@example.com",
+		"emailIsConfirmed": true,
+		"isAnonymus": false,
+		"passwordHash": "fsa7sdhdh54h6gsyfol23orh2o",
+		"avatarUrl": "https://randomuser.me/api/portraits/med/men/3.jpg",
+		"isBlocked": false
+	},
+	{
+		"lastName": "Molner",
+		"firstName": "Maria",
+		"email": "maria.molner@example.com",
+		"emailIsConfirmed": true,
+		"isAnonymus": false,
+		"passwordHash": "fsa79gsags9g5sg95s896gsyfol23orh2o",
+		"avatarUrl": "https://randomuser.me/api/portraits/med/women/6.jpg",
+		"isBlocked": false
+	},
+	{
+		"lastName": "Polnitz",
+		"firstName": "Julia",
+		"email": "Julia.polnitz@example.com",
+		"emailIsConfirmed": true,
+		"isAnonymus": false,
+		"passwordHash": "fsa79gsags9g5sg95s896gsyfol23orh2o",
+		"avatarUrl": "https://randomuser.me/api/portraits/med/women/8.jpg",
+		"isBlocked": false
+	},
+	{
+		"lastName": "Voggen",
+		"firstName": "Alex",
+		"email": "alex.voggen@example.com",
+		"emailIsConfirmed": true,
+		"isAnonymus": false,
+		"passwordHash": "fsa79gsags9g5sg95s896gsyfol23orh2o",
+		"avatarUrl": "https://randomuser.me/api/portraits/med/men/10.jpg",
+		"isBlocked": false
+	},
+	{
+		"lastName": "Franzens",
+		"firstName": "Hermann",
+		"email": "franzens.hermann@example.com",
+		"emailIsConfirmed": true,
+		"isAnonymus": false,
+		"passwordHash": "fsa79gsags9g5sg95s896gsyfol23orh2o",
+		"avatarUrl": "https://randomuser.me/api/portraits/med/men/15.jpg",
+		"isBlocked": false
+	},
+	{
+		"lastName": "goldfaden",
+		"firstName": "Klara",
+		"email": "klara.goldfaden@example.com",
+		"emailIsConfirmed": true,
+		"isAnonymus": false,
+		"passwordHash": "fsa79gsags9g5sg95s896gsyfol23orh2o",
+		"avatarUrl": "https://randomuser.me/api/portraits/med/women/21.jpg",
+		"isBlocked": false
+	},
+	{
+		"lastName": "Ondar",
+		"firstName": "Enzo",
+		"email": "enzo.ondar@example.com",
+		"emailIsConfirmed": true,
+		"isAnonymus": false,
+		"passwordHash": "fsa79gsags9g5sg95s896gsyfol23orh2o",
+		"avatarUrl": "https://randomuser.me/api/portraits/med/men/22.jpg",
+		"isBlocked": false
+	},
+	{
+		"lastName": "Singfeld",
+		"firstName": "Paul",
+		"email": "paul.singfeld@example.com",
+		"emailIsConfirmed": true,
+		"isAnonymus": false,
+		"passwordHash": "fsa79gsags9g5sg95s896gsyfol23orh2o",
+		"avatarUrl": "https://randomuser.me/api/portraits/med/men/25.jpg",
+		"isBlocked": false
+	},
+	{
+		"lastName": "Noname",
+		"firstName": "Freigeist",
+		"email": "freigeist@example.com",
+		"emailIsConfirmed": true,
+		"isAnonymus": false,
+		"passwordHash": "fsa79gsags9g5sg95s896gsyfol23orh2o",
+		"avatarUrl": "https://randomuser.me/api/portraits/med/women/30.jpg",
+		"isBlocked": false
+	},
+	{
+		"lastName": "Muster",
+		"firstName": "Maximiliana",
+		"email": "maximiliana@muster.com",
+		"emailIsConfirmed": true,
+		"isAnonymus": false,
+		"passwordHash": "fsa79gsags9g5sg95s896gsyfol23orh2o",
+		"avatarUrl": "https://randomuser.me/api/portraits/med/men/30.jpg",
+		"isBlocked": false
+	}
+]

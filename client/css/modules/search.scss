@@ -1,0 +1,23 @@
+.searchTerm {
+  margin: 0 $std-space;
+}
+
+@include breakpoint($breakpoint-small) {
+  .hintMD {
+    display: none;
+  }
+
+  .searchTerm {
+    width: 100%;
+  }
+}
+
+@include breakpoint($breakpoint-large) {
+  .hintXS {
+    display: none;
+  }
+
+  .searchTerm {
+    width: 90%;
+  }
+}

@@ -1,0 +1,37 @@
+[
+	{
+		"amount": 100,
+		"currency": "EUR",
+		"transactionDate": 1452633446000,
+		"transactionId": "123",
+		"fkBackingId": 8,
+		"fkPaymentProviderId": 1
+	},
+
+	{
+		"amount": 100,
+		"currency": "EUR",
+		"transactionDate": 1484255846000,
+		"transactionId": "123",
+		"fkBackingId": 5,
+		"fkPaymentProviderId": 1
+	},
+
+	{
+		"amount": 100,
+		"currency": "EUR",
+		"transactionDate": 1484255846000,
+		"transactionId": "123",
+		"fkBackingId": 6,
+		"fkPaymentProviderId": 1
+	},
+
+	{
+		"amount": 100,
+		"currency": "EUR",
+		"transactionDate": 1484255846000,
+		"transactionId": "123",
+		"fkBackingId": 7,
+		"fkPaymentProviderId": 1
+	}
+]

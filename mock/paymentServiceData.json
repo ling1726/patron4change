@@ -1,0 +1,57 @@
+[
+	{
+		"fkUserId": 8,
+		"fkPaymentProviderId": 1,
+		"accountId": "19765947",
+		"cardRegistrationId":"19807396"
+	},
+
+	{
+		"fkUserId": 9,
+		"fkPaymentProviderId": 1,
+		"accountId": "18559606"
+	},
+
+
+	{
+		"fkUserId": 2,
+		"fkPaymentProviderId": 1,
+		"accountId": "18559606",
+		"cardRegistrationId":"19807396"
+	},
+
+	{
+		"fkUserId": 3,
+		"fkPaymentProviderId": 1,
+		"accountId": "18559606",
+		"cardRegistrationId":"19807396"
+	},
+
+	{
+		"fkUserId": 4,
+		"fkPaymentProviderId": 1,
+		"accountId": "18559606",
+		"cardRegistrationId":"19807396"
+	},
+
+	{
+		"fkUserId": 5,
+		"fkPaymentProviderId": 1,
+		"accountId": "18559606",
+		"cardRegistrationId":"19807396"
+	},
+
+	{
+		"fkUserId": 6,
+		"fkPaymentProviderId": 1,
+		"accountId": "18559606",
+		"cardRegistrationId":"19807396"
+	},
+
+	{
+		"fkUserId": 7,
+		"fkPaymentProviderId": 1,
+		"accountId": "18559606",
+		"cardRegistrationId":"19807396"
+	}
+]

@@ -1,0 +1,82 @@
+[
+	{
+		"fkUserId": 1,
+		"isApproved": true,
+		"approvalDate": "2016-01-08T12:30:00.000Z",
+		"fkContentId": 1,
+		"videoUrl": ""
+	},
+
+	{
+		"fkUserId": 2,
+		"isApproved": true,
+		"approvalDate": "2016-01-08T12:30:00.000Z",
+		"fkContentId": 2,
+		"videoUrl": ""
+	},
+
+	{
+		"fkUserId": 3,
+		"isApproved": true,
+		"approvalDate": "2016-01-08T12:30:00.000Z",
+		"fkContentId": 3,
+		"videoUrl": ""
+	},
+
+	{
+		"fkUserId": 4,
+		"isApproved": true,
+		"approvalDate": "2016-01-08T12:30:00.000Z",
+		"fkContentId": 4,
+		"videoUrl": ""
+	},
+
+	{
+		"fkUserId": 5,
+		"isApproved": true,
+		"approvalDate": "2016-01-08T12:30:00.000Z",
+		"fkContentId": 5,
+		"videoUrl": ""
+	},
+
+	{
+		"fkUserId": 6,
+		"isApproved": true,
+		"approvalDate": "2016-01-08T12:30:00.000Z",
+		"fkContentId": 6,
+		"videoUrl": ""
+	},
+
+	{
+		"fkUserId": 7,
+		"isApproved": true,
+		"approvalDate": "2016-01-08T12:30:00.000Z",
+		"fkContentId": 7,
+		"videoUrl": ""
+	},
+
+	{
+		"fkUserId": 8,
+		"isApproved": true,
+		"approvalDate": "2016-01-08T12:30:00.000Z",
+		"fkContentId": 8,
+		"videoUrl": ""
+	},
+
+	{
+		"fkUserId": 9,
+		"isApproved": true,
+		"approvalDate": "2016-01-18T12:30:00.000Z",
+		"fkContentId": 9,
+		"videoUrl": ""
+	},
+
+	{
+		"fkUserId": 10,
+		"isApproved": true,
+		"approvalDate": "2017-01-16T12:30:00.000Z",
+		"fkContentId": 10,
+		"videoUrl": ""
+	}
+
+]

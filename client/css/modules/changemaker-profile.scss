@@ -1,0 +1,203 @@
+@import "../theme/_theme.scss";
+
+.profileContainer {
+  position: relative;
+  max-height: 48rem;
+}
+
+.newsHeader {
+  margin: $std-space 0;
+}
+
+@include breakpoint($breakpoint-large) {
+  .secondRow {
+    margin-top: $std-space;
+  }
+}
+
+.profileContent {
+  @include breakpoint($breakpoint-large) {
+    position: absolute;
+    left: 0;
+    width: 40%;
+  }
+
+  position: relative;
+
+  height: 100%;
+  background: $color-white;
+  opacity: 1;
+  transition: left 0.2s ease-in-out, opacity 0.1s ease-in-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 100%;
+    width: 10%;
+    height: 100%;
+    background: linear-gradient(to right, $color-white, transparent);
+  }
+}
+
+@include breakpoint($breakpoint-large) {
+  [class~=video--playing] + .profileContent {
+    left: -50%;
+    opacity: 0;
+  }
+}
+
+// TODO [class~=video--loading] styles
+
+.video {
+  text-align: right;
+  position: relative;
+
+  video {
+    width: 100%;
+  }
+
+  &[class~=video--paused] {
+    [class~=video-overlay] {
+      background-color: rgba(0,0,0,0.4);
+    }
+    [class~=video-controls] {
+      opacity: 0;
+    }
+  }
+
+  &:hover:not([class~=video--paused]) [class~=video-controls] {
+    opacity: 1;
+  }
+
+  [class~=video-overlay] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out;
+
+    [class~=video-overlay__play] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        @include breakpoint($breakpoint-large) {
+          margin-left: 40%;
+        }
+        font-size: 500%;
+        height: auto;
+        text-align: center;
+        vertical-align: middle;
+        color: $color-white;
+
+        &:before {
+          content: 'play_circle_filled'
+        }
+      }
+    }
+  }
+
+  $video-controls-height: 40px;
+
+  [class~=video-controls] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $video-controls-height;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    background-color: $color-white;
+    display: flex;
+
+    button {
+      background: none;
+      border: none;
+    }
+  }
+
+  [class~=video__control] {
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+    padding: $video-controls-height / 4;
+  }
+
+  [class~=video-icon] {
+    font-family: 'Material Icons';
+    font-size: $video-controls-height / 2;
+    display: inline-block;
+    margin: 0 0.25em;
+    height: 100%;
+  }
+
+  [class~=video-icon--play-1]:before {
+    content: 'play_arrow';
+  }
+  [class~=video-icon--pause-1]:before {
+    content: 'pause';
+  }
+  [class~=video-icon--resize-full]:before {
+    content: 'fullscreen';
+  }
+  [class~=video-icon--volume-off]:before {
+    content: 'volume_mute';
+  }
+  [class~=video-icon--volume-down]:before {
+    content: 'volume_down';
+  }
+  [class~=video-icon--volume-up]:before {
+    content: 'volume_up';
+  }
+
+  [class~=video-seek] {
+    flex-grow: 1;
+  }
+
+  [class~=video-seek__container] {
+    position: relative;
+    top: 50%;
+    height: 4px;
+  }
+
+  [class~=video-progress-bar] {
+    position: relative;
+    height: 100%;
+    background-color: scale-color($color-black, $lightness: +50%);
+  }
+
+  [class~=video-progress-bar__fill] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: $color-black;
+  }
+
+  [class~=video-progress-bar__input] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    outline: none;
+  }
+
+  [class~=video-time] * {
+    line-height: $video-controls-height / 2;
+  }
+}
+
+.mission {
+}
